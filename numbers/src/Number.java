@@ -22,9 +22,10 @@ public class Number {
 
     @Override
     public String toString() {
-        return "Number{" +
-                "values=" + Arrays.toString(values) +
-                '}';
+        return Integer.toString(values[0])
+                + Integer.toString(values[1])
+                + Integer.toString(values[2])
+                + Integer.toString(values[3]);
     }
 
     @Override
@@ -43,10 +44,11 @@ public class Number {
     }
 
     public Number(int value) {
+        this.values = new int[4];
         this.values[3] = value % 10;
         this.values[2] = value % 100 / 10;
         this.values[1] = value % 1000 / 100;
-        this.values[1] = value / 1000;
+        this.values[0] = value / 1000;
     }
 
     public Number(int[] values) {
